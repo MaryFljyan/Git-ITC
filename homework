@@ -1,0 +1,98 @@
+1. Create a folder for your git repository and initialize the new git repository in that folder.
+
+	sudo apt install git
+	git –version
+        mkdir git
+	cd git/
+	git init
+ Result:Initialized empty Git repository in /home/mery/git/.git/
+	git config --local user.name "Mery Fljyan"
+	git config --local user.email "mary.fljyan.g@tumo.org"
+	git config --local  core.editor vim
+
+
+2. Write one program in your repository which will be print "Hello World" and commit your program file.(You can use any programming language)
+
+	vim hello.txt (write in file echo Hello World)
+	git status
+	git add hello.txt
+	git status
+        git commit (write Add Hello World!)
+Result:[master (root-commit) 9d39c82] Add Hello World!
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.txt
+
+3. Add a function to your program which will print "Second Commit" and with that create second commit.
+
+      vim hello.txt
+      function name {
+       echo "Second Commit }
+      git status
+      git add hello.txt
+      git status
+      git commit (write Add second commit)
+Result:[master e297bd0] Add second commit
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+
+4. Create a new branch from master and add a function to your program which will print "New branch" and with that create commit.
+	git branch
+	git checkout -b branch2
+	git checkout master
+	git branch
+	function name2 {
+        echo "New Branch"
+	}
+
+
+	name2
+	git status -suno
+	git add hello.txt
+	git status
+	git commit (Write Add new branch)
+Result:[master 05d11bf] Add New branch
+ 1 file changed, 8 insertions(+)
+
+5. Create another branch from master and use revert to revert the last commit.
+	git branch
+        git checkout -b branch3
+        git checkout master
+        git branch
+	git log
+	git revert 05d11bf537c2f36717ea1656bd60388e4c7df355
+Result:[master a7feaf5] Revert "Add New branch"
+ 1 file changed, 8 deletions(-)
+
+6. Add function to both of the branches which will print "first branch" in first branch and "second branch" in second branch.
+
+	git checkout branch2
+        vim br2
+	git status
+	git add br2
+	git status
+        git commit
+	git checkout branch3
+	vim br3
+	git add br3
+	git status
+	git commit
+	git checkout master
+
+
+
+7. Merge second branch to first branch.
+
+	git checkout branch3
+	git merge branch2
+        conflict
+	rm -rf br2
+
+8. Register to GitHub and create a new repository. Add remote to your local repository.	
+
+	git remote add origin https://github.com/MaryFljyan/Git-ITC.git
+
+9. Push all your branches to remote and clone your remote repository to another folder.
+                 Generation Tocken
+		 git checkout main
+		 git remote add  origin https://MaryFljyan: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@github.com/Git-ITC.git
+	    	 gut push  -u origin main
+	
