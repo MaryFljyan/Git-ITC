@@ -6,7 +6,7 @@
 	cd git/
 	git init
  Result:Initialized empty Git repository in /home/mery/git/.git/
-	git config --local user.name "Mery Fljyan"
+	git config --local user.name "MaryFljyan"
 	git config --local user.email "mary.fljyan.g@tumo.org"
 	git config --local  core.editor vim
 
@@ -36,43 +36,43 @@ Result:[master e297bd0] Add second commit
 
 4. Create a new branch from master and add a function to your program which will print "New branch" and with that create commit.
 	git branch
-	git checkout -b branch2
+	git checkout -b firstbranch
 	git checkout master
 	git branch
-	function name2 {
+	function newBranch {
         echo "New Branch"
 	}
 
 
-	name2
+	newBranch
 	git status -suno
 	git add hello.txt
 	git status
-	git commit (Write Add new branch)
-Result:[master 05d11bf] Add New branch
+	git commit (Write Add New Branch)
+Result:[master 05d11bf] Add New Branch
  1 file changed, 8 insertions(+)
 
 5. Create another branch from master and use revert to revert the last commit.
 	git branch
-        git checkout -b branch3
+        git checkout -b secondbranch
         git checkout master
         git branch
 	git log
-	git revert 05d11bf537c2f36717ea1656bd60388e4c7df355
+	git revert a66b4fc5d4d3642edf38eed68dcbffc862383eb5
 Result:[master a7feaf5] Revert "Add New branch"
  1 file changed, 8 deletions(-)
 
 6. Add function to both of the branches which will print "first branch" in first branch and "second branch" in second branch.
 
-	git checkout branch2
-        vim br2
+	git checkout firstbranch
+        vim firstbranch
 	git status
-	git add br2
+	git add firstbranch
 	git status
         git commit
-	git checkout branch3
-	vim br3
-	git add br3
+	git checkout secondbranch
+	vim secondbranch
+	git add secondbranch
 	git status
 	git commit
 	git checkout master
@@ -81,10 +81,19 @@ Result:[master a7feaf5] Revert "Add New branch"
 
 7. Merge second branch to first branch.
 
-	git checkout branch3
-	git merge branch2
-        conflict
-	rm -rf br2
+	git checkout secondbranch
+	git merge firstbranch
+Result:Auto-merging hello.txt 
+	CONFLICT (content): Merge conflict in hello.txt
+	Automatic merge failed; fix conflicts and then commit the result.
+
+	rm -rf firstbranch
+	git add firstbranch
+	git status
+	git commit
+Result:git commit
+[secondbranch c66c7bc] Merge branch 'firstbranch' into secondbranch
+
 
 8. Register to GitHub and create a new repository. Add remote to your local repository.	
 
@@ -93,6 +102,6 @@ Result:[master a7feaf5] Revert "Add New branch"
 9. Push all your branches to remote and clone your remote repository to another folder.
                  Generation Tocken
 		 git checkout main
-		 git remote add  origin https://MaryFljyan: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@github.com/Git-ITC.git
+		 git remote add  origin https://MaryFljyan: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@github.com/Git-ITC.git
 	    	 gut push  -u origin main
 	
