@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo Hello World !
+<<<<<<< HEAD
+=======
+
+
+function name {
+       echo "Second Commit"
+
+
+}
+
+name
+
+
+function newBranch  {
+       echo "New Branch"
+
+
+
+}
+
+newBranch
+>>>>>>> firstbranch
